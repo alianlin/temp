@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGWNDDQ');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+    <title>ALian | Portfolio - APP</title>
+    <meta name="keywords" content="Portfolio,ALian Lin,ALian,A-Lian,林阿蓮,阿蓮,UI,Designer,Web Designer" />
+    <meta name="description" content="ALian Lin is a UI Designer,with 10 years of experience in design, digital, and marketing." />
+    <meta property="og:title" content="ALian Lin | Portfolio" />
+    <meta property="og:description" content="ALian Lin is a UI Designer,with 10 years of experience in design, digital, and marketing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alian-design.com" />
+    <meta property="og:image" content="https://alian-design.com/images/share.jpg" />
+    <meta property="og:image:url" content="https://alian-design.com/images/share.jpg" />
+    <link rel="icon" href="https://alian-design.com/ALian/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64282.js"></script>
+</head>
+<body class="page" id="design">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGWNDDQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="header" id="header">
+    </header>
+    <div class="section_kv kv_page  kv_design">
+       <div class="container">
+            <h1 class="title">
+                <p>Design</p>
+            </h1>
+       </div>
+        <div class="kv_bg">
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_circle"></div>
+            <div class="bg_lin" ></div>
+            <div class="bg_lin" ></div>
+            <div class="bg_lin"></div>
+        </div>
+    </div>
+    <section class="section_page design_page">
+        <div class="container container_tab">
+            <div class="row">
+              <a v-for="cat in categories"
+                :key="cat"
+                href="javascript:void(0);"
+                :class="['btn_tab', { 'is-active': currentCategory === cat }]"
+                @click="currentCategory = cat">
+                <span>{{ cat }}</span>
+                </a>
+              <!-- <a href="javascript:void(0);" class="btn_tab">
+                    <span>Landing</span>
+                </a>
+                <a href="design_app.html" class="btn_tab">
+                    <span>APP</span>
+                </a>
+                <a href="design_website.html" class="btn_tab">
+                    <span>Website</span>
+                </a>
+                <a href="design_award.html" class="btn_tab">
+                    <span>Award</span>
+                </a>
+                <a href="design_graphic.html" class="btn_tab">
+                    <span>Graphic</span>
+                </a> -->
+            </div>
+        </div>
+        <div class="container container_design">
+            <div class="row row_content" v-for="project in projects.filter(p => p.category === currentCategory)" :key="project.id">
+                <div class="col-12 col-md-55">
+                    <div class="item item_pic" data-aos="fade">
+                        <img :src="`images/${path}/pic_${project.id}.jpg`" :alt="project.title" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-55">
+                    <div class="item item_info" data-aos="fade-up">
+                        <h2 class="info_title">
+                            <p>{{ project.title }}</p>
+                        </h2>
+                        <div class="info_tag">
+                            <span class="tag">{{ project.category }}</span>
+                            <span class="tag">{{ project.client }}</span>
+                            <span class="tag">{{ project.year }}</span>
+                        </div>
+                        <h5 class="info_content">
+                            <p>{{ project.description }}</p>
+                            <p>負責項目：{{ project.responsibilities.join('、') }}</p>
+                        </h5>
+                        <div class="info_more">
+                            <a v-if="project.link" :href="project.link" class="btn_more info_more" target="_blank" rel="noopener">
+                                <span class="text">more</span>
+                                <span class="circle">
+                                    <img class="arrow" src="images/btn_arrow_s.svg" alt="scroll down">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+    <a class="btn_more btn_top" href="javascript:void(0);" data-aos="kv-fadeOut" data-aos-anchor=".kv_scroll-fadeOut">
+        <span class="text">TOP</span>
+        <span class="circle">
+            <img class="arrow" src="images/btn_arrow_sw.svg" alt="top">
+        </span>
+    </a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/mold.js"></script>
+    <script type="module">
+        import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.esm-browser.prod.js';
+        import { useFetchData } from './js/useFetchData.js'; // 保持你的檔案路徑
+
+        createApp({
+            setup() {
+            const { categories, currentCategory, projects, path } = useFetchData();
+            return { categories, currentCategory, projects, path };
+            }
+        }).mount('#design');
+    </script>
+</body>
+
+</html>
